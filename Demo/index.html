@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MooCam - Demo</title>
+  <style>
+    body {
+      background-color:#e2e2e2;
+      color:#333;
+      font:normal normal 400 13px/18px "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", Tahoma, sans-serif;
+      margin:0 auto;
+      min-height:100%;
+      position:relative;
+      width:980px;
+    }
+    #MooCam {
+      color:#fff;
+      width:480px;
+      height:480px;
+      background-color:#000;
+      margin:0 auto;
+    }
+    h1 {
+      text-align:center;
+    }
+    a,a:link,a:visited {
+      color:#e52520;
+      text-decoration:none;
+    }
+
+    a:focus,a:hover,a:active {
+      text-decoration:underline;
+    }
+
+    a:active {
+      top:1px;
+      position:relative;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>MooCam</h1>
+  <div id="MooCam">Please enable Flash.</div>
+  <p>
+    <a href="#" onclick="myCam.takePicture(); return false;">Take picture!</a> |
+    <a href="#" onclick="myCam.takePicture('edges'); return false;">Take picture (edges filter)!</a> |
+    <a href="#" onclick="myCam.takePicture('emboss'); return false;">Take picture (emboss filter)!</a> |
+    <a href="#" onclick="myCam.takePicture('invert'); return false;">Take picture (invert filter)!</a> |
+    <a href="#" onclick="myCam.takePicture('monochrome'); return false;">Take picture (monochrome filter)!</a> |
+    <a href="#" onclick="myCam.takePicture('sepia'); return false;">Take picture (sepia filter)!</a> |
+    <a href="#" onclick="myCam.deletePicture(); return false;">Delete picture!</a> |
+    <a href="#" onclick="myCam.savePicture(); return false;">Save picture!</a> |
+  </p>
+
+  <script src="//ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools-yui-compressed.js"></script>
+  <script src="../Source/MooCam.js"></script>
+  <script>
+    window.addEvent('domready', function() {
+      myCam = new MooCam('MooCam');
+    })
+  </script>
+</body>
+</html>
